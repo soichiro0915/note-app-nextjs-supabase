@@ -18,19 +18,16 @@ export const getStaticProps: GetStaticProps = async () => {
   }
   return {
     props: { notes },
-    // revalidate: false,
+    revalidate: false,
   }
 }
-
 type StaticProps = {
   notes: Note[]
 }
-
 const Notes: NextPage<StaticProps> = ({ notes }) => {
   const signOut = () => {
     supabase.auth.signOut()
   }
-
   return (
     <Layout title="Notes">
       <LogoutIcon
