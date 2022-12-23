@@ -58,7 +58,7 @@ export const useMutateComment = () => {
         .from('comments')
         .delete()
         .eq('id', id)
-        .selcect()
+        .select()
       if (error) throw new Error(error.message)
       return data
     },
